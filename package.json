@@ -1,8 +1,7 @@
 {
   "name": "project1_braingames",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Terminal based game brain-games",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -14,8 +13,16 @@
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
-  "author": "",
+  "keywords": [
+    "brain-games",
+    "brain games",
+    "terminal game"
+  ],
+  "author": "Olga Melnikova",
   "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.5",
