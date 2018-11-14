@@ -22,8 +22,6 @@ export const startBrainEven = () => {
   const playerName = askPlayerName();
   console.log(welcomePlayer(playerName));
 
-  const numberOfQuestion = 3;
-
   const makeGame = (counter) => {
     if (counter === 0) {
       return console.log(`Congratulations, ${playerName}!`);
@@ -39,5 +37,6 @@ export const startBrainEven = () => {
     return makeGame(counter - 1);
   };
 
+  const numberOfQuestion = 3;
   return makeGame(numberOfQuestion);
 };
