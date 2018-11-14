@@ -1,9 +1,10 @@
 {
   "name": "project1_braingames",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Terminal based game brain-games",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "files": [
     "dist"
