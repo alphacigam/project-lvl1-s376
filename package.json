@@ -1,6 +1,6 @@
 {
   "name": "project1_braingames",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Terminal based game brain-games",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",

@@ -10,8 +10,8 @@
 
 ## Run Brain-Even
 
-[![asciicast](https://asciinema.org/a/NQuRn0Ds7X5SxK4n2O2QWWjZZ.svg)](https://asciinema.org/a/NQuRn0Ds7X5SxK4n2O2QWWjZZ)
+[![asciicast](https://asciinema.org/a/ur2rIvWT9FYURUxbYQvqXhVKz.svg)](https://asciinema.org/a/ur2rIvWT9FYURUxbYQvqXhVKz)
 
 ## Run Brain-Calc
 
-[![asciicast](https://asciinema.org/a/D4jx5SawTV2gXx59rCDgOe2r7.svg)](https://asciinema.org/a/D4jx5SawTV2gXx59rCDgOe2r7)
+[![asciicast](https://asciinema.org/a/wuxCTit0irG60fhiQiRM9qJFK.svg)](https://asciinema.org/a/wuxCTit0irG60fhiQiRM9qJFK)
