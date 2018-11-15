@@ -1,42 +1,36 @@
 import readlineSync from 'readline-sync';
+import { cons } from 'hexlet-pairs';
 
-const askPlayerName = () => readlineSync.question('May I have your name? ');
-const welcomePlayer = name => `Hello, ${name}!`;
+export const welcomeMessage = 'Welcome to the Brain Games!';
+export const askPlayerName = () => readlineSync.question('May I have your name? ');
+export const welcomePlayer = name => `Hello, ${name}!`;
 
-export const startBrainGames = () => {
-  console.log('Welcome to the Brain Games!');
-  const playerName = askPlayerName();
-  console.log(welcomePlayer(playerName));
+export const askQuestion = value => `Question: ${value}`;
+export const getPlayerAnswer = () => readlineSync.question('Your answer: ');
+export const getWrongMessage = name => (anw1, anw2) => `${anw1}' is wrong answer ;(. Correct answer was '${anw2}'.\nLet's try again, ${name}!`;
+export const getTrueMessage = () => 'Correct!';
+export const getEndGameMessage = name => `Congratulations, ${name}!`;
+
+export const numberOfQuestions = 3;
+
+export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+export const isEven = number => number % 2 === 0;
+
+export const getOperation = (number1, number2) => {
+  switch (getRandomNumber(1, 3)) {
+    case 1:
+      return cons('+', number1 + number2);
+    case 2:
+      return cons('-', number1 - number2);
+    case 3:
+      return cons('*', number1 * number2);
+    default:
+      return null;
+  }
 };
 
-const getRandomNumber = () => {
-  const min = 0;
-  const max = 1000;
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
-const isEven = number => number % 2 === 0;
-
-export const startBrainEven = () => {
-  console.log('Welcome to the Brain Games!\nAnswer "yes" if number even otherwise answer "no".');
-  const playerName = askPlayerName();
-  console.log(welcomePlayer(playerName));
-
-  const makeGame = (counter) => {
-    if (counter === 0) {
-      return console.log(`Congratulations, ${playerName}!`);
-    }
-    const number = getRandomNumber();
-    console.log(`Question: ${number}`);
-    const trueAnswer = isEven(number) ? 'yes' : 'no';
-    const playerAnswer = readlineSync.question('Your answer: ');
-    if (playerAnswer !== trueAnswer) {
-      return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${trueAnswer}'.\nLet's try again, ${playerName}!`);
-    }
-    console.log('Correct!');
-    return makeGame(counter - 1);
-  };
-
-  const numberOfQuestion = 3;
-  return makeGame(numberOfQuestion);
+export default () => {
+  console.log(welcomeMessage);
+  console.log(welcomePlayer(askPlayerName()));
 };
