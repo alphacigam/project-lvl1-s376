@@ -6,7 +6,7 @@ import {
 
 export default () => {
   const instruction = 'Answer "yes" if number even otherwise answer "no"';
-  console.log(`${welcomeMessage}\n${instruction}`);
+  console.log(`${welcomeMessage}\n${instruction}\n`);
   const playerName = askPlayerName();
   console.log(welcomePlayer(playerName));
 
@@ -14,7 +14,9 @@ export default () => {
     if (counter === 0) {
       return console.log(getEndGameMessage(playerName));
     }
-    const number = getRandomNumber(0, 1000);
+    const min = 0;
+    const max = 1000;
+    const number = getRandomNumber(min, max);
     console.log(askQuestion(number));
     const trueAnswer = isEven(number) ? 'yes' : 'no';
     const playerAnswer = getPlayerAnswer();

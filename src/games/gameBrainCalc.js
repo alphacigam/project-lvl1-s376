@@ -7,7 +7,7 @@ import {
 
 export default () => {
   const instruction = 'What is the result of the expression?';
-  console.log(`${welcomeMessage}\n${instruction}`);
+  console.log(`${welcomeMessage}\n${instruction}\n`);
   const playerName = askPlayerName();
   console.log(welcomePlayer(playerName));
 
@@ -15,8 +15,10 @@ export default () => {
     if (counter === 0) {
       return console.log(getEndGameMessage(playerName));
     }
-    const number1 = getRandomNumber(0, 50);
-    const number2 = getRandomNumber(0, 50);
+    const min = 0;
+    const max = 50;
+    const number1 = getRandomNumber(min, max);
+    const number2 = getRandomNumber(min, max);
     const operation = getOperation(number1, number2);
     const questionValue = `${number1} ${car(operation)} ${number2}`;
     console.log(askQuestion(questionValue));

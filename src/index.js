@@ -3,7 +3,7 @@ import { cons } from 'hexlet-pairs';
 
 export const welcomeMessage = 'Welcome to the Brain Games!';
 export const askPlayerName = () => readlineSync.question('May I have your name? ');
-export const welcomePlayer = name => `Hello, ${name}!`;
+export const welcomePlayer = name => `Hello, ${name}!\n`;
 
 export const askQuestion = value => `Question: ${value}`;
 export const getPlayerAnswer = () => readlineSync.question('Your answer: ');
