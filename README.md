@@ -6,4 +6,12 @@
 
 ## Setup
 
-[![asciicast](https://asciinema.org/a/4PS6O6eqMLcq4aaL5T9MUrRhj.svg)](https://asciinema.org/a/4PS6O6eqMLcq4aaL5T9MUrRhj)
+[![asciicast](https://asciinema.org/a/nShfuFigK7GwyjjEWszihV2N3.svg)](https://asciinema.org/a/nShfuFigK7GwyjjEWszihV2N3)
+
+## Run Brain-Even
+
+[![asciicast](https://asciinema.org/a/NQuRn0Ds7X5SxK4n2O2QWWjZZ.svg)](https://asciinema.org/a/NQuRn0Ds7X5SxK4n2O2QWWjZZ)
+
+## Run Brain-Calc
+
+[![asciicast](https://asciinema.org/a/D4jx5SawTV2gXx59rCDgOe2r7.svg)](https://asciinema.org/a/D4jx5SawTV2gXx59rCDgOe2r7)
