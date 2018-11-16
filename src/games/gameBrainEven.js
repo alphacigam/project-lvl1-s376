@@ -1,31 +1,14 @@
-import {
-  welcomeMessage, askPlayerName, welcomePlayer,
-  askQuestion, getPlayerAnswer, getWrongMessage, getTrueMessage, getEndGameMessage,
-  numberOfQuestions, getRandomNumber, isEven,
-} from '..';
+import { makeGame, getRandomNumber } from '..';
+import { cons } from 'hexlet-pairs';
 
-export default () => {
-  const instruction = 'Answer "yes" if number even otherwise answer "no"';
-  console.log(`${welcomeMessage}\n${instruction}\n`);
-  const playerName = askPlayerName();
-  console.log(welcomePlayer(playerName));
+const gameInstruction = 'Answer "yes" if number even otherwise answer "no".';
 
-  const makeGame = (counter) => {
-    if (counter === 0) {
-      return console.log(getEndGameMessage(playerName));
-    }
-    const min = 0;
-    const max = 1000;
-    const number = getRandomNumber(min, max);
-    console.log(askQuestion(number));
-    const trueAnswer = isEven(number) ? 'yes' : 'no';
-    const playerAnswer = getPlayerAnswer();
-    if (playerAnswer !== trueAnswer) {
-      return console.log(getWrongMessage(playerName)(playerAnswer, trueAnswer));
-    }
-    console.log(getTrueMessage());
-    return makeGame(counter - 1);
-  };
-
-  return makeGame(numberOfQuestions);
+const getGameQuestion = () => {
+  const minNumber = 0;
+  const maxNumber = 1000;
+  const randomNumber = getRandomNumber(minNumber, maxNumber);
+  const trueAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
+  return cons(randomNumber, trueAnswer);
 };
+
+export default () => makeGame(gameInstruction, getGameQuestion);

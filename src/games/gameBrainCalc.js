@@ -1,35 +1,30 @@
-import { car, cdr } from 'hexlet-pairs';
-import {
-  welcomeMessage, askPlayerName, welcomePlayer,
-  askQuestion, getPlayerAnswer, getWrongMessage, getTrueMessage, getEndGameMessage,
-  numberOfQuestions, getRandomNumber, getOperation,
-} from '..';
+import { makeGame, getRandomNumber } from '..';
+import { cons, car, cdr } from 'hexlet-pairs';
 
-export default () => {
-  const instruction = 'What is the result of the expression?';
-  console.log(`${welcomeMessage}\n${instruction}\n`);
-  const playerName = askPlayerName();
-  console.log(welcomePlayer(playerName));
+const gameInstruction = 'What is the result of the expression?.';
 
-  const makeGame = (counter) => {
-    if (counter === 0) {
-      return console.log(getEndGameMessage(playerName));
-    }
-    const min = 0;
-    const max = 50;
-    const number1 = getRandomNumber(min, max);
-    const number2 = getRandomNumber(min, max);
-    const operation = getOperation(number1, number2);
-    const questionValue = `${number1} ${car(operation)} ${number2}`;
-    console.log(askQuestion(questionValue));
-    const trueAnswer = String(cdr(operation));
-    const playerAnswer = getPlayerAnswer();
-    if (playerAnswer !== trueAnswer) {
-      return console.log(getWrongMessage(playerName)(playerAnswer, trueAnswer));
-    }
-    console.log(getTrueMessage());
-    return makeGame(counter - 1);
-  };
-
-  return makeGame(numberOfQuestions);
+const getOperation = (number1, number2) => {
+  switch (getRandomNumber(1, 3)) {
+    case 1:
+      return cons('+', number1 + number2);
+    case 2:
+      return cons('-', number1 - number2);
+    case 3:
+      return cons('*', number1 * number2);
+    default:
+      return null;
+  }
 };
+
+const getGameQuestion = () => {
+  const minNumber = 0;
+  const maxNumber = 50;
+  const randomNumber1 = getRandomNumber(minNumber, maxNumber);
+  const randomNumber2 = getRandomNumber(minNumber, maxNumber);
+  const operation = getOperation(randomNumber1, randomNumber2);
+  const questionContent = `${randomNumber1} ${car(operation)} ${randomNumber2}`;
+  const trueAnswer = cdr(operation);
+  return cons(questionContent, trueAnswer);
+};
+
+export default () => makeGame(gameInstruction, getGameQuestion);
