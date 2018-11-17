@@ -1,8 +1,11 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
-export const makeGame = (gameInstruction, generateQuestion, numberOfRounds = 3) => {
-  console.log(`Welcome to the Brain Games!\n${gameInstruction}\n`);
+const numberOfRounds = 3;
+
+const makeGame = (gameInstruction, generateGameData) => {
+  console.log('Welcome to the Brain Games!');
+  console.log(`${gameInstruction}\n`);
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!\n`);
 
@@ -11,12 +14,14 @@ export const makeGame = (gameInstruction, generateQuestion, numberOfRounds = 3) 
       console.log(`Congratulations, ${playerName}!`);
       return;
     }
-    const gameQuestion = generateQuestion();
-    console.log(`Question: ${car(gameQuestion)}`);
+    const gameData = generateGameData();
+    const question = car(gameData);
+    const trueAnswer = String(cdr(gameData));
+    console.log(`Question: ${question}`);
     const playerAnswer = readlineSync.question('Your answer: ');
-    const trueAnswer = String(cdr(gameQuestion));
     if (playerAnswer !== trueAnswer) {
-      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${trueAnswer}'.\nLet's try again, ${playerName}!`);
+      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${trueAnswer}'.\n`);
+      console.log(`Let's try again, ${playerName}!`);
       return;
     }
     console.log('Correct!');
@@ -26,8 +31,4 @@ export const makeGame = (gameInstruction, generateQuestion, numberOfRounds = 3) 
   playGameSession(numberOfRounds);
 };
 
-export default () => {
-  console.log('Welcome to the Brain Games!\n');
-  const playerName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${playerName}!\n`);
-};
+export default makeGame;
