@@ -23,3 +23,7 @@
 ## Run brain-progression
 
 [![asciicast](https://asciinema.org/a/hJCVtudPHTmYp2nU5wGOmf7LA.svg)](https://asciinema.org/a/hJCVtudPHTmYp2nU5wGOmf7LA)
+
+## Run brain-prime
+
+[![asciicast](https://asciinema.org/a/4kLbeJ2pzelFrjgIe1TacM68X.svg)](https://asciinema.org/a/4kLbeJ2pzelFrjgIe1TacM68X)
