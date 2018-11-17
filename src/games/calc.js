@@ -1,5 +1,6 @@
-import { makeGame, getRandomNumber } from '..';
 import { cons, car, cdr } from 'hexlet-pairs';
+import { makeGame } from '..';
+import getRandomNumber from '../utils';
 
 const gameInstruction = 'What is the result of the expression?.';
 
@@ -16,15 +17,16 @@ const getOperation = (number1, number2) => {
   }
 };
 
-const getGameQuestion = () => {
-  const minNumber = 0;
-  const maxNumber = 50;
+const minNumber = 0;
+const maxNumber = 50;
+
+const generateQuestion = () => {
   const randomNumber1 = getRandomNumber(minNumber, maxNumber);
   const randomNumber2 = getRandomNumber(minNumber, maxNumber);
   const operation = getOperation(randomNumber1, randomNumber2);
-  const questionContent = `${randomNumber1} ${car(operation)} ${randomNumber2}`;
+  const question = `${randomNumber1} ${car(operation)} ${randomNumber2}`;
   const trueAnswer = cdr(operation);
-  return cons(questionContent, trueAnswer);
+  return cons(question, trueAnswer);
 };
 
-export default () => makeGame(gameInstruction, getGameQuestion);
+export default () => makeGame(gameInstruction, generateQuestion);
