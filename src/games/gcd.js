@@ -22,10 +22,10 @@ const minNumber = 1;
 const maxNumber = 100;
 
 const generateQuestion = () => {
-  const randomNumber1 = getRandomNumber(minNumber, maxNumber);
-  const randomNumber2 = getRandomNumber(minNumber, maxNumber);
-  const question = `${randomNumber1} ${randomNumber2}`;
-  const trueAnswer = getGreatestCommonDivisor(randomNumber1, randomNumber2);
+  const number1 = getRandomNumber(minNumber, maxNumber);
+  const number2 = getRandomNumber(minNumber, maxNumber);
+  const question = `${number1} ${number2}`;
+  const trueAnswer = getGreatestCommonDivisor(number1, number2);
   return cons(question, trueAnswer);
 };
 

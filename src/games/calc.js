@@ -21,10 +21,10 @@ const minNumber = 0;
 const maxNumber = 50;
 
 const generateQuestion = () => {
-  const randomNumber1 = getRandomNumber(minNumber, maxNumber);
-  const randomNumber2 = getRandomNumber(minNumber, maxNumber);
-  const operation = getOperation(randomNumber1, randomNumber2);
-  const question = `${randomNumber1} ${car(operation)} ${randomNumber2}`;
+  const number1 = getRandomNumber(minNumber, maxNumber);
+  const number2 = getRandomNumber(minNumber, maxNumber);
+  const operation = getOperation(number1, number2);
+  const question = `${number1} ${car(operation)} ${number2}`;
   const trueAnswer = cdr(operation);
   return cons(question, trueAnswer);
 };
