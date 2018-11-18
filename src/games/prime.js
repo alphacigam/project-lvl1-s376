@@ -10,16 +10,16 @@ const isPrime = (number) => {
   }
 
   const checkNumber = (counter) => {
-    if (counter === 1) {
+    if (counter > number / 2) {
       return true;
     }
     if (number % counter === 0) {
       return false;
     }
-    return checkNumber(counter - 1);
+    return checkNumber(counter + 1);
   };
 
-  return checkNumber(number - 1);
+  return checkNumber(2);
 };
 
 const minNumber = 0;
